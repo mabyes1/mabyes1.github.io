@@ -1,0 +1,13 @@
+{
+  "name": "kenhuang-resume",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "qa": "node scripts/build.mjs && node scripts/make-qa-files.mjs && node scripts/browser-qa.mjs",
+    "pdf": "npm run qa"
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f4f5f0"/>
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="#ffffff" stroke="#d9ddd7"/>
+  <rect x="112" y="112" width="80" height="80" rx="18" fill="#173f35"/>
+  <path d="M132 130v44h9v-18l17 18h13l-20-22 19-22h-13l-16 18v-18h-9Z" fill="#f4f5f0"/>
+  <text x="112" y="288" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#202521">Ken Huang</text>
+  <text x="112" y="354" font-family="Arial, sans-serif" font-size="31" fill="#173f35">Software Engineer · Full-stack &amp; AI Application Engineering</text>
+  <text x="112" y="435" font-family="Arial, sans-serif" font-size="26" fill="#5d665f">Production systems · Financial markets · AI-assisted engineering</text>
+  <text x="112" y="490" font-family="Arial, sans-serif" font-size="22" fill="#7a837c">Taipei / New Taipei, Taiwan · @mabyes1</text>
+</svg>
