@@ -6,7 +6,7 @@ import { featuredProjects, projects } from '../src/data/projects.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'dist');
-const site = 'https://kenhuang.pp.ua';
+const site = 'https://kenhuang.kennyxizi.pp.ua';
 
 const e = (value = '') => String(value)
   .replaceAll('&', '&amp;')
