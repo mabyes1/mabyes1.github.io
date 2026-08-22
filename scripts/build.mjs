@@ -6,7 +6,7 @@ import { featuredProjects, projects } from '../src/data/projects.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'dist');
-const site = 'https://kenhuang.kennyxizi.pp.ua';
+const site = 'https://mabyes1.github.io';
 
 const e = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -101,7 +101,7 @@ function projectCard(project, lang, compact = false) {
       <h3><a href="${href}">${e(project.name)}</a></h3>
       <p>${e(project.summary[lang])}</p>
       ${tags(project.technologies, compact ? 5 : 6)}
-      <a class="inline-link" href="${href}">${lang === 'zh' ? '查看 case study' : 'View case study'} <span aria-hidden="true">→</span></a>
+      <a class="inline-link" href="${href}">${lang === 'zh' ? '查看專案詳情' : 'View project details'} <span aria-hidden="true">→</span></a>
     </div>
   </article>`;
 }
@@ -129,8 +129,8 @@ function homepage(lang) {
     </section>
 
     <section class="section shell about-grid">
-      ${sectionHeading('About', zh ? '從正式系統一路做到 AI-assisted engineering' : 'From production systems to AI-assisted engineering')}
-      <div class="prose-large"><p>${e(profile.about[lang])}</p><p>${e(zh ? '這不是從「AI 做 App」反向包裝成工程經驗。我的底座一直是正式商用系統、金融交易流程與 production support；AI 讓我能更快跨進前端、裝置、串流與各種過去不會主動選的領域。' : 'This is not an “AI made an app” story repackaged as engineering experience. The foundation is production software, financial trading workflows, and operational support; AI has expanded the range of problems I can personally take from idea to working product.')}</p></div>
+      <div class="section-heading"><p class="eyebrow">About</p></div>
+      <div class="prose-large"><p>${e(profile.about[lang])}</p><p>${e(zh ? '我的工程底座來自正式商用系統、金融交易流程與 production support。近年 AI 讓我能更快跨進前端、裝置、串流與各種過去不會主動選的領域。' : 'My engineering foundation comes from production software, financial trading workflows, and operational support. AI has expanded the range of problems I can personally take from idea to working product.')}</p></div>
     </section>
 
     <section class="section section-tinted"><div class="shell">
@@ -139,7 +139,7 @@ function homepage(lang) {
     </div></section>
 
     <section class="section shell">
-      <div class="section-heading-row">${sectionHeading('Featured Projects', zh ? '近年作品' : 'Recent work', zh ? '不是練習專案。這三個都是長期使用、公開交付或持續演進的工程工作。' : 'Not tutorial projects. These are shipped, daily-use, or continuously evolving engineering systems.')}<a class="inline-link desktop-link" href="${langPath(lang, '/projects')}">${zh ? '全部作品' : 'All projects'} →</a></div>
+      <div class="section-heading-row">${sectionHeading('Featured Projects', zh ? '近年作品' : 'Recent work', zh ? '這三個專案都來自實際使用需求，並且已公開交付、每天使用或持續演進。' : 'These projects come from real usage needs and are shipped, used daily, or continuously evolving.')}<a class="inline-link desktop-link" href="${langPath(lang, '/projects')}">${zh ? '全部作品' : 'All projects'} →</a></div>
       <div class="featured-grid">${featuredProjects.map((x) => projectCard(x, lang)).join('')}</div>
     </section>
 
@@ -172,7 +172,7 @@ function homepage(lang) {
 function archive(lang) {
   const zh = lang === 'zh';
   const path = langPath(lang, '/projects');
-  const body = `${header(lang, true, path)}<main id="main" class="archive-main"><header class="page-hero shell"><p class="eyebrow">Projects Archive</p><h1>${zh ? '完成的東西，都留在這裡。' : 'Completed work lives here.'}</h1><p>${e(zh ? '有些是公開產品，有些是每天使用的私人系統，也有些只是為了解決一個具體問題而存在。不是每個都需要當 flagship，但每個都代表一次從問題到可用結果的完整過程。' : 'Some are public products, some are private systems I use every day, and some exist to solve one narrow problem. Not every project needs to be a flagship; each one represents a complete path from problem to usable result.')}</p></header><section class="section shell"><div class="archive-grid">${projects.map((x) => projectCard(x, lang, true)).join('')}</div></section></main>`;
+  const body = `${header(lang, true, path)}<main id="main" class="archive-main"><header class="page-hero shell"><p class="eyebrow">Projects Archive</p><h1>${zh ? '已完成 Side Project 列表' : 'Completed Side Projects'}</h1><p>${e(zh ? '含公開與不公開產品，皆為實際每日使用系統或產品，僅簡單展示技術原理與問題到可用結果的完整過程。' : 'Includes both public and private products, all built for real daily use. Each entry briefly shows the technical approach and the path from problem to a usable result.')}</p></header><section class="section shell"><div class="archive-grid">${projects.map((x) => projectCard(x, lang, true)).join('')}</div></section></main>`;
   return base({ lang, title: zh ? '作品｜黃鵬展 Ken Huang' : 'Projects | Ken Huang', description: zh ? 'Ken Huang 的軟體工程與 AI-assisted engineering 作品集。' : 'Software engineering and AI-assisted engineering projects by Ken Huang.', path, body });
 }
 
@@ -185,10 +185,10 @@ function projectDetail(project, lang) {
     <section id="built"><p class="eyebrow">What I built</p><h2>${zh ? '最後做成什麼' : 'What the product does'}</h2>${bullets(project.built[lang])}</section>
     <section id="role"><p class="eyebrow">My role & AI collaboration</p><h2>${zh ? '我的角色與 AI 分工' : 'My role and the AI-assisted workflow'}</h2><p>${e(project.role[lang])}</p></section>
     <section id="engineering"><p class="eyebrow">Engineering</p><h2>${zh ? '值得談的工程問題' : 'Engineering decisions worth discussing'}</h2>${bullets(project.engineering[lang])}${tags(project.technologies)}</section>
-    <section id="evidence" class="evidence-card"><p class="eyebrow">Evidence</p><h2>${zh ? '不是只停在 repo 裡' : 'Evidence beyond the source tree'}</h2><p>${e(project.evidence?.[lang] ?? '')}</p>${project.links ? `<div class="evidence-links">${project.links.map((x) => `<a href="${e(x.href)}" target="_blank" rel="noreferrer">${e(x.label)} ↗</a>`).join('')}</div>` : ''}</section>
+    <section id="evidence" class="evidence-card"><p class="eyebrow">Evidence</p><h2>${zh ? '實際使用與交付證據' : 'Evidence in use and delivery'}</h2><p>${e(project.evidence?.[lang] ?? '')}</p>${project.links ? `<div class="evidence-links">${project.links.map((x) => `<a href="${e(x.href)}" target="_blank" rel="noreferrer">${e(x.label)} ↗</a>`).join('')}</div>` : ''}</section>
     <section id="tradeoffs"><p class="eyebrow">Trade-offs / What I learned</p><h2>${zh ? '實測、推翻與取捨' : 'Testing, discarded ideas, and trade-offs'}</h2>${bullets(project.tradeoffs[lang])}</section>
   </article></div></main>`;
-  return base({ lang, title: `${project.name}${zh ? '｜Ken Huang Case Study' : ' | Ken Huang Case Study'}`, description: project.summary[lang], path, body });
+  return base({ lang, title: `${project.name}${zh ? '｜Ken Huang' : ' | Ken Huang'}`, description: project.summary[lang], path, body });
 }
 
 function printResume(lang) {

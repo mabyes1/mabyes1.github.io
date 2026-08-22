@@ -58,11 +58,11 @@ When the content is ready for release, regenerate the PDF resumes with `npm run 
 
 ## Deployment
 
-The repository is intended for GitHub Pages. `.github/workflows/pages.yml` builds and deploys `dist/` on pushes to `main`.
+The repository is published as the GitHub user site. `.github/workflows/pages.yml` builds and deploys `dist/` on pushes to `main`.
 
-Production hostname: `kenhuang.pp.ua`
+Production URL: `https://mabyes1.github.io/`
 
-DNS remains managed in Cloudflare. The hostname can point to the GitHub Pages site via CNAME while the old `kennyxizi.pp.ua` hostname remains available for a later permanent redirect.
+No custom domain or external DNS configuration is required.
 
 ## Design constraints
 

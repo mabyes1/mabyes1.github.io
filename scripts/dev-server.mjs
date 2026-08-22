@@ -6,6 +6,7 @@ import { spawn } from 'node:child_process';
 const root = new URL('../', import.meta.url).pathname.replace(/^\/(.:)/, '$1');
 const dist = join(root, 'dist');
 const port = Number(process.env.PORT || 4321);
+const host = process.env.HOST || '0.0.0.0';
 
 await new Promise((resolve, reject) => {
   const build = spawn(process.execPath, [join(root, 'scripts', 'build.mjs')], { stdio: 'inherit' });
@@ -29,4 +30,7 @@ createServer(async (req, res) => {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
     res.end('Not found');
   }
-}).listen(port, '127.0.0.1', () => console.log(`Resume site: http://127.0.0.1:${port}`));
+}).listen(port, host, () => {
+  console.log(`Resume site listening on ${host}:${port}`);
+  console.log(`Local: http://127.0.0.1:${port}`);
+});
