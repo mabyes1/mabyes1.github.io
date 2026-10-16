@@ -1,8 +1,71 @@
 export const projects = [
   {
+    slug: 'pickpico',
+    name: 'PickPico',
+    featured: true,
+    status: ['SITCON 2026 · 3rd Place', 'Public Release'],
+    summary: {
+      zh: 'SITCON 2026 黑客松第三名。將 Android 手機變成 AI Agent 可使用的 MCP 工具節點，透過雲端 Relay 執行裝置操作，並在敏感步驟保留真人核准。',
+      en: 'Third place at the 2026 SITCON Hackathon. Turns an Android phone into an MCP-enabled tool node for AI agents, using a cloud relay for remote device actions and explicit human approval where needed.',
+    },
+    problem: {
+      zh: 'AI Agent 能呼叫 API，卻很難可靠地完成真實手機上的跨 App 操作，尤其涉及使用者權限、螢幕狀態、連線中斷或需要真人同意時。',
+      en: 'Agents can invoke APIs, but interacting reliably with a real phone across apps introduces permission, screen-state, connectivity, and human-approval boundaries.',
+    },
+    built: {
+      zh: [
+        'Android App 提供通知、相機、螢幕擷取、UI inspect/action、App 啟動、TTS 等經授權裝置工具。',
+        'MCP 工具經 Cloudflare Durable Object / KV Relay 與 Android 裝置橋接，讓遠端 Agent 使用具體裝置能力。',
+        'ESP32-S3 藍牙實體控制器提供核准、拒絕與人工介入操作。',
+        '設計工具狀態、執行回饋與需要 human assistance 時的控制流程；持續處理 Android 權限及生命週期造成的失效情境。',
+      ],
+      en: [
+        'Exposes permission-scoped Android tools for notifications, camera, screen capture, UI inspection/actions, app launch, and text-to-speech.',
+        'Bridges MCP calls through a Cloudflare Durable Object / KV relay to an Android device for remote agent execution.',
+        'Integrates an ESP32-S3 Bluetooth physical controller for approve, reject, and human-intervention actions.',
+        'Models execution state and human-assistance handoffs, including recovery from Android permissions and lifecycle interruptions.',
+      ],
+    },
+    role: {
+      zh: '由我提出系統概念、定義工具邊界與使用者授權流程，整合 Android、MCP、Relay 與 ESP32 實機測試。AI coding agents 協助程式實作與迭代；由我驗證裝置行為、可靠性與最後成果。',
+      en: 'I defined the system concept, tool boundaries, consent flow, and integration across Android, MCP, relay, and ESP32 hardware. AI coding agents helped with implementation and iteration; I validated real-device behavior, reliability, and the delivered result.',
+    },
+    engineering: {
+      zh: [
+        '把 Agent 的抽象工具呼叫映射到具有生命週期、權限與狀態的 Android 操作；每個操作都需要可觀察的結果。',
+        '結合遠端 Relay、裝置端工具與 human-in-the-loop，處理 Agent 無法自主跨越的使用者確認邊界。',
+        '在網路切換、背景限制與手機介面中斷等真實情境中驗證，將失敗情境回饋到執行狀態管理。',
+      ],
+      en: [
+        'Maps abstract agent tool calls onto stateful, permission-gated Android interactions and makes their outcomes observable.',
+        'Combines remote relay, on-device tools, and human-in-the-loop approvals where autonomous execution must stop.',
+        'Validated behavior against real network changes, Android background constraints, and interrupted UI sessions; fed failures back into execution-state handling.',
+      ],
+    },
+    tradeoffs: {
+      zh: [
+        '優先使用 Android 正規權限與明確使用者核准，不以繞過裝置安全邊界換取 Agent 自主程度。',
+        '雲端 Relay 負責連線與協調，實際裝置能力留在手機端；跨網路可靠性仍需真機驗證。',
+      ],
+      en: [
+        'Uses legitimate Android permissions and explicit user authorization rather than bypassing device security to expand autonomy.',
+        'The relay coordinates connectivity while device capabilities remain on the phone; cross-network reliability requires real-device validation.',
+      ],
+    },
+    technologies: ['MCP', 'Agent Tool Calling', 'Android', 'Cloudflare Durable Objects', 'Cloudflare KV', 'ESP32-S3', 'Bluetooth', 'Human-in-the-loop'],
+    links: [
+      { label: 'Source / Documentation', href: 'https://github.com/mabyes1/PickPico' },
+      { label: 'Project Showcase', href: 'https://mabyes1.github.io/PickPico/' },
+    ],
+    evidence: {
+      zh: '2026 SITCON Hackathon 第三名；公開原始碼、文件與專案展示，包含實際 Android 與 ESP32 裝置串接。',
+      en: 'Third-place project at SITCON Hackathon 2026; public source, documentation, and showcase demonstrating Android / ESP32 integration.',
+    },
+  },
+  {
     slug: 'vibedeck',
     name: 'VibeDeck',
-    featured: true,
+    featured: false,
     status: ['Public Release'],
     summary: {
       zh: '把閒置手機、平板與其他瀏覽器裝置變成 Windows 真實第二螢幕，或可自訂的資訊面板。',

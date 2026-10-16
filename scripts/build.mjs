@@ -1,7 +1,7 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { education, experiences, languages, professionalStack, profile, recentStack } from '../src/data/resume.mjs';
+import { education, experiences, highlights, languages, professionalStack, profile, recentStack } from '../src/data/resume.mjs';
 import { featuredProjects, projects } from '../src/data/projects.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -128,18 +128,24 @@ function homepage(lang) {
       </div>
     </section>
 
+    <section class="highlights-band" aria-label="${zh ? '黑客松與實作成果' : 'Hackathon achievements'}">
+      <div class="shell highlights-grid">
+        ${highlights.map((x) => `<div class="highlight-item"><strong>${e(x.label[lang])}</strong><p>${e(x.detail[lang])}</p>${x.href ? `<a class="inline-link" href="${e(x.href)}" target="_blank" rel="noreferrer">${zh ? '專案原始碼' : 'View project'} ↗</a>` : ''}</div>`).join('')}
+      </div>
+    </section>
+
     <section class="section shell about-grid">
       <div class="section-heading"><p class="eyebrow">About</p></div>
       <div class="prose-large"><p>${e(profile.about[lang])}</p><p>${e(zh ? '我的工程底座來自正式商用系統、金融交易流程與 production support。近年 AI 讓我能更快跨進前端、裝置、串流與各種過去不會主動選的領域。' : 'My engineering foundation comes from production software, financial trading workflows, and operational support. AI has expanded the range of problems I can personally take from idea to working product.')}</p></div>
     </section>
 
     <section class="section section-tinted"><div class="shell">
-      ${sectionHeading('Professional Experience', zh ? '正式工作經驗' : 'Production engineering experience', zh ? '16 年商用軟體與金融核心系統經驗。' : '16 years across commercial software and financial-market core systems.')}
+      ${sectionHeading('Professional Experience', zh ? '正式工作經驗' : 'Production engineering experience', zh ? '超過 13 年商用軟體與金融核心系統經驗。' : '13+ years across commercial software and financial-market core systems.')}
       <div class="timeline">${experiences.map((x) => `<article class="experience-card"><div class="experience-side"><span>${e(x.period)}</span><h3>${e(x.company[lang])}</h3><p>${e(x.title[lang])}</p></div><div class="experience-main"><p class="experience-summary">${e(x.summary[lang])}</p>${bullets(x.bullets[lang])}${tags(x.technologies)}</div></article>`).join('')}</div>
     </div></section>
 
     <section class="section shell">
-      <div class="section-heading-row">${sectionHeading('Featured Projects', zh ? '近年作品' : 'Recent work', zh ? '這三個專案都來自實際使用需求，並且已公開交付、每天使用或持續演進。' : 'These projects come from real usage needs and are shipped, used daily, or continuously evolving.')}<a class="inline-link desktop-link" href="${langPath(lang, '/projects')}">${zh ? '全部作品' : 'All projects'} →</a></div>
+      <div class="section-heading-row">${sectionHeading('Featured Projects', zh ? 'AI Agent 與工具平台作品' : 'Agentic AI & Tooling Projects', zh ? '三個專案涵蓋 Android Agent、MCP 工具執行與多模型 Session 管理。' : 'Hands-on projects in Android agents, MCP tool execution, and multi-model session orchestration.')}<a class="inline-link desktop-link" href="${langPath(lang, '/projects')}">${zh ? '全部作品' : 'All projects'} →</a></div>
       <div class="featured-grid">${featuredProjects.map((x) => projectCard(x, lang)).join('')}</div>
     </section>
 
@@ -199,6 +205,7 @@ function printResume(lang) {
     <div class="print-page">
       <header class="print-header"><div><h1>${e(profile.name[lang])}</h1><p class="print-role">${e(profile.role)}</p><p>${e(profile.location)} · ${profile.email}</p><p>${profile.github} · ${profile.linkedin}</p></div></header>
       <section><h2>${zh ? '專業摘要' : 'Professional Summary'}</h2><p>${e(profile.intro[lang])}</p><p>${e(profile.about[lang])}</p></section>
+      <section><h2>${zh ? '黑客松成果' : 'Hackathon Highlights'}</h2>${highlights.map((x) => `<p><strong>${e(x.label[lang])}</strong> · ${e(x.detail[lang])}</p>`).join('')}</section>
       <section><h2>${zh ? '工作經驗' : 'Professional Experience'}</h2>${experiences.map((x) => `<article class="print-experience"><div class="print-row"><h3>${e(x.company[lang])}</h3><strong>${e(x.period)}</strong></div><p class="print-subtitle">${e(x.title[lang])}</p><p>${e(x.summary[lang])}</p>${bullets(x.bullets[lang].slice(0, 4))}</article>`).join('')}</section>
     </div>
     <div class="print-page">

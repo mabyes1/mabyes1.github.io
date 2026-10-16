@@ -1,21 +1,33 @@
 export const profile = {
   name: { zh: '黃鵬展 / Ken Huang', en: 'Ken Huang' },
   handle: '@mabyes1',
-  role: 'Software Engineer · Full-stack & AI Application Engineering',
+  role: 'Senior Software Engineer · Agentic AI Systems & Application Engineering',
   location: 'Taipei / New Taipei, Taiwan',
   email: 'mabyes1@gmail.com',
   github: 'https://github.com/mabyes1',
   linkedin: 'https://www.linkedin.com/in/%E9%B5%AC%E5%B1%95-%E9%BB%83-7b164c4254/',
   avatar: 'https://avatars.githubusercontent.com/u/124116017?v=4',
   intro: {
-    zh: '16 年軟體工程經驗，經歷涵蓋商用旅遊 ERP、production support，以及金融業外匯與交易核心系統（Murex）。近年隨 AI coding tools 成熟，將既有工程經驗延伸到 Full-stack 與 AI Application Engineering，把真實需求做成自己每天使用或可公開交付的產品。',
-    en: 'Software engineer with 16 years of experience across commercial ERP systems and financial-market infrastructure. In recent years, I have extended that foundation into full-stack and AI application engineering, using modern AI coding tools to turn real operational needs into products I use daily or ship publicly.',
+    zh: '超過 13 年商用軟體與金融交易核心系統經驗，近年專注 AI Agent、MCP 工具整合、跨裝置執行與 human-in-the-loop 工作流程。以 PickPico 參加 2026 SITCON Hackathon 獲得第三名；將正式環境除錯與系統可靠性經驗，帶進實際可運作的 Agent 工具鏈。',
+    en: 'Software engineer with 13+ years across commercial applications and financial-market core systems. Recently focused on agentic AI, MCP tool orchestration, cross-device execution, and human-in-the-loop workflows. Built PickPico, awarded third place at the 2026 SITCON Hackathon, while bringing production-debugging and reliability experience to practical agent systems.',
   },
   about: {
-    zh: '習慣從實際問題出發，再決定怎麼做。近年 AI coding tools 讓我能更快跨進不同領域，把想法做成真的能用的東西；我的重點則放在需求、方向、取捨、實機驗證和最後的品質。',
-    en: 'My workflow starts with the problem, constraints, and acceptable trade-offs, then moves to an implementation approach. AI coding tools handle a large share of implementation, exploration, refactoring, and debugging assistance; I remain responsible for product definition, system boundaries, engineering trade-offs, real-device validation, root-cause reasoning, and final quality.',
+    zh: '從金融交易系統的穩定性、介接與故障定位出發，延伸到 Agent runtime、tool calling 與執行狀態管理。獨立定義產品、系統邊界、驗證方式與安全取捨，並與 AI coding tools 協作完成大量實作；作品採實機與真流程驗證。',
+    en: 'I combine a background in reliable trading-system integration and production troubleshooting with hands-on agent runtime, tool calling, and execution-state management. I own product scope, system boundaries, validation and security trade-offs, while collaborating extensively with AI coding tools on implementation; projects are verified against real devices and workflows.',
   },
 };
+
+export const highlights = [
+  {
+    label: { zh: '2026 SITCON Hackathon · 第三名', en: '2026 SITCON Hackathon · Third Place' },
+    detail: { zh: 'PickPico：Android Agent 工具平台、MCP、遠端執行與人機協作。', en: 'PickPico: an Android agent tool platform with MCP, remote execution, and human-in-the-loop control.' },
+    href: 'https://github.com/mabyes1/PickPico',
+  },
+  {
+    label: { zh: '2026 和泰 AI 黑客松 · 提案投稿', en: '2026 Hotai AI Hackathon · Proposal Submission' },
+    detail: { zh: 'iRent TIME LENS：車輛刮痕前後比對與數位記憶系統提案。', en: 'iRent TIME LENS: a proposal for a vehicle-damage timeline and before/after inspection comparison.' },
+  },
+];
 
 export const experiences = [
   {
@@ -49,7 +61,7 @@ export const experiences = [
   },
   {
     company: { zh: '科威資訊', en: 'Kewei Information' },
-    period: '2010–2015',
+    period: '2012–2015',
     title: { zh: 'FAE 組長', en: 'FAE Team Lead' },
     summary: {
       zh: '旅遊資訊 ERP 公司。早期參與 Classic ASP 後端開發與維護，後期帶領 3 人 FAE 團隊處理正式商用系統的 production 問題。',
@@ -72,7 +84,7 @@ export const experiences = [
 ];
 
 export const professionalStack = ['C#', 'VB.NET', 'Classic ASP', 'SQL', 'Oracle', 'SQL Server', 'Stored Procedure', 'Windows Service', 'IIS', 'MQ', 'Socket', 'SFTP', 'XML', 'CSV', 'Batch', 'Scheduler', 'Windows Server', 'Linux', 'Git', 'SVN', 'TFS', 'Murex', 'STP'];
-export const recentStack = ['TypeScript', 'Node.js', 'HTML / CSS', 'WebSocket', 'WebRTC', 'Python', 'PWA', 'Cloudflare', 'GitHub Actions', 'Android', 'ADB', 'MCP', 'AI SDK', 'C# Host'];
+export const recentStack = ['Agent Orchestration', 'MCP / Tool Calling', 'Human-in-the-loop', 'TypeScript', 'Node.js', 'Python', 'Android', 'ADB', 'Cloudflare Durable Objects', 'WebSocket', 'WebRTC', 'HTML / CSS', 'PWA', 'GitHub Actions', 'C# Host'];
 
 export const education = {
   school: { zh: '台北商業技術學院', en: 'National Taipei College of Business' },

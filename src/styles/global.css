@@ -199,6 +199,13 @@ button { font: inherit; }
 .identity-card strong { font-size: 16px; }
 .identity-card span { color: var(--muted); font-size: 13px; }
 
+.highlights-band { border-block: 1px solid var(--line); background: var(--surface-soft); }
+.highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-block: 26px; }
+.highlight-item { min-width: 0; padding-left: 18px; border-left: 3px solid var(--accent); }
+.highlight-item strong { font-size: 15px; line-height: 1.45; }
+.highlight-item p { margin: 7px 0 6px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.highlight-item .inline-link { font-size: 13px; }
+
 .section { padding-block: 92px; }
 .section-tinted { background: var(--surface-soft); border-block: 1px solid var(--line); }
 .section-heading { max-width: 760px; }
@@ -401,6 +408,7 @@ button { font: inherit; }
   .hero-actions { display: grid; grid-template-columns: 1fr; }
   .hero-actions .button { width: 100%; min-width: 0; }
   .hero-links { gap: 10px 16px; }
+  .highlights-grid { grid-template-columns: 1fr; gap: 22px; padding-block: 24px; }
   .section { padding-block: 68px; }
   .section-heading h2, .contact-band h2 { font-size: 32px; }
   .prose-large { font-size: 17px; }
