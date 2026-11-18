@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="自己用的私人投資帳務與績效系統：每天自動整理證券交易紀錄、留存完整歷史，按我自己的績效口徑算出報酬與跨年度累計股利。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/cast-iron">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/cast-iron">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="鑄鐵 Cast Iron｜黃鵬展">
+  <meta property="og:description" content="自己用的私人投資帳務與績效系統：每天自動整理證券交易紀錄、留存完整歷史，按我自己的績效口徑算出報酬與跨年度累計股利。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/cast-iron">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="鑄鐵 Cast Iron｜黃鵬展">
+  <meta name="twitter:description" content="自己用的私人投資帳務與績效系統：每天自動整理證券交易紀錄、留存完整歷史，按我自己的績效口徑算出報酬與跨年度累計股利。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>鑄鐵 Cast Iron｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/cast-iron" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>金融與研究</span><span>2026</span></p><h1>鑄鐵 Cast Iron</h1><p class="project-lead">自己用的私人投資帳務與績效系統：每天自動整理證券交易紀錄、留存完整歷史，按我自己的績效口徑算出報酬與跨年度累計股利。</p><div class="status-list"><span class="status-chip">Daily Use</span><span class="status-chip">Private</span></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>券商報表的時間區間和績效算法常跟我自己想看的角度對不上，不如自己留一套完整交易流水，把跨年度股利和持倉集中在同一本帳上。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>每天自動抓回交易明細並正規化；Rust core 負責帳務寫入與歷史保存；每日產出報表。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>帳務口徑跟績效定義由我定，抓檔、入帳與報表管線和 coding agents 一起整理好，再用自己的對帳單一筆筆核對。</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>實測後推翻與取捨</h2><ul class="bullets"><li>裡面都是我真實的資產跟交易明細，所以只留私人環境。</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>每天持續運作的私人投資帳本；因涉及真實交易與資產明細，程式碼與資料不對外公開。</p></section><div class="tag-list"><span>Rust</span><span>Crawler</span><span>Email ingestion</span><span>Reporting</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

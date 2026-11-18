@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tracks large-holder shifts in Taiwan stocks using TDCC shareholder-distribution data, generating rule-based signals and event backtests—intentionally skipping ML in the core so every signal stays traceable and reproducible.">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/en/projects/equity-lab">
+  <link rel="alternate" hreflang="zh-TW" href="https://mabyes1.github.io/projects/equity-lab">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Equity Lab | Ken Huang">
+  <meta property="og:description" content="Tracks large-holder shifts in Taiwan stocks using TDCC shareholder-distribution data, generating rule-based signals and event backtests—intentionally skipping ML in the core so every signal stays traceable and reproducible.">
+  <meta property="og:url" content="https://mabyes1.github.io/en/projects/equity-lab">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Equity Lab | Ken Huang">
+  <meta name="twitter:description" content="Tracks large-holder shifts in Taiwan stocks using TDCC shareholder-distribution data, generating rule-based signals and event backtests—intentionally skipping ML in the core so every signal stays traceable and reproducible.">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>Equity Lab | Ken Huang</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/en"><span class="brand-mark">KH</span><span class="brand-name">Ken Huang</span></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="" href="/en">Resume</a>
+        <a class="active" href="/en/projects">Projects</a>
+        <a href="/resume-en.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/projects/equity-lab" hreflang="zh-TW">中</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="Toggle color theme">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/en/projects">← All projects</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>Finance &amp; Research</span><span>2026</span></p><h1>Equity Lab</h1><p class="project-lead">Tracks large-holder shifts in Taiwan stocks using TDCC shareholder-distribution data, generating rule-based signals and event backtests—intentionally skipping ML in the core so every signal stays traceable and reproducible.</p><div class="status-list"><span class="status-chip">Research</span><span class="status-chip">Private</span></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>Why I built it</h2><p>Before asking whether large-holder shifts predict price behavior, bracket revisions, stock universes, and corporate actions must be clean—otherwise great backtests are usually data bugs.</p></section><section id="built"><p class="eyebrow">What I built</p><h2>What I built</h2><ul class="bullets"><li>Normalizes historical TDCC bracket changes, reconstructs large-holder positions and shareholder counts, and pins down the common-stock universe from official filings.</li><li>Resumable full-market backfill, ownership indicators, and rule-based event backtests retaining raw source records and dates.</li><li>Strict split across dev, calibration, and holdout sets guards against overfitting while validating the rule logic on a 12-stock holdout set.</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>How I split the work with AI</h2><p>I define the ownership questions, signal definitions, and backtest assumptions, build the pipeline with coding agents, and audit results for sample or data-prep distortion.</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>What testing made me change</h2><ul class="bullets"><li>A personal research codebase focused on clean data definitions and reproducible signals.</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>Outcome</h2><p>Ingestion, normalization, backfill, and event backtesting run end to end, turning Taiwan stock ownership hypotheses into traceable reports.</p></section><div class="tag-list"><span>Python</span><span>FastAPI</span><span>Polars</span><span>DuckDB</span><span>Parquet</span><span>pytest</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

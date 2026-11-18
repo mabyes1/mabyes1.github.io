@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="拿同一筆起始資金公平比較單筆投入、定期定額、定期定額加跌深加碼三種策略：每筆買進都查得到、沒進場的現金也算進報酬，並明確區分價格指數跟還原股價。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/backtestlab">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/backtestlab">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BacktestLab｜黃鵬展">
+  <meta property="og:description" content="拿同一筆起始資金公平比較單筆投入、定期定額、定期定額加跌深加碼三種策略：每筆買進都查得到、沒進場的現金也算進報酬，並明確區分價格指數跟還原股價。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/backtestlab">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BacktestLab｜黃鵬展">
+  <meta name="twitter:description" content="拿同一筆起始資金公平比較單筆投入、定期定額、定期定額加跌深加碼三種策略：每筆買進都查得到、沒進場的現金也算進報酬，並明確區分價格指數跟還原股價。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>BacktestLab｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/backtestlab" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>金融與研究</span><span>2026</span></p><h1>BacktestLab</h1><p class="project-lead">拿同一筆起始資金公平比較單筆投入、定期定額、定期定額加跌深加碼三種策略：每筆買進都查得到、沒進場的現金也算進報酬，並明確區分價格指數跟還原股價。</p><div class="status-list"><span class="status-chip">Open Source</span></div><div class="hero-actions"><a class="button primary" href="https://github.com/mabyes1/BacktestLab" target="_blank" rel="noreferrer">GitHub</a></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#role">Role &amp; AI</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>很多單筆和定期定額的比較會不小心讓某邊投入更多資金，或漏算場邊還沒買進的現金。我想先把這筆帳算公平、攤開來看。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>三種策略共用同一筆起始資金，每筆買入、當下回撤、實際投入與剩餘現金攤開列清。</li><li>直接抓歷史價格並快取，可切換 Close／Adjusted Close；手續費、交易稅與零股假設直接標在介面上。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>比較口徑和帳務規則由我拍板，計算引擎跟介面搭配 coding agents 完成，再用逐筆交易明細親自核對數字。</p></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>零第三方套件的純 Node.js 本機回測工具，已開源，結果都能追回每筆成交和剩餘現金。</p><div class="evidence-links"><a href="https://github.com/mabyes1/BacktestLab" target="_blank" rel="noreferrer">GitHub ↗</a></div></section><div class="tag-list"><span>Node.js</span><span>JavaScript</span><span>node:test</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把任何支援 MCP 的 AI 聊天工具變成語言家教：Anki 管卡片與排程，AI 負責教跟評分。我自己每天透過 ChatGPT connector 用它背單字。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/anki-tutor-mcp">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/anki-tutor-mcp">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AnkiTutor MCP｜黃鵬展">
+  <meta property="og:description" content="把任何支援 MCP 的 AI 聊天工具變成語言家教：Anki 管卡片與排程，AI 負責教跟評分。我自己每天透過 ChatGPT connector 用它背單字。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/anki-tutor-mcp">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AnkiTutor MCP｜黃鵬展">
+  <meta name="twitter:description" content="把任何支援 MCP 的 AI 聊天工具變成語言家教：Anki 管卡片與排程，AI 負責教跟評分。我自己每天透過 ChatGPT connector 用它背單字。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>AnkiTutor MCP｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/anki-tutor-mcp" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>AI Agent 與 MCP</span><span>2026</span></p><h1>AnkiTutor MCP</h1><p class="project-lead">把任何支援 MCP 的 AI 聊天工具變成語言家教：Anki 管卡片與排程，AI 負責教跟評分。我自己每天透過 ChatGPT connector 用它背單字。</p><div class="status-list"><span class="status-chip">MCP</span><span class="status-chip">Daily Use</span></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>希望 AI 像真人老師一樣依我的回答調整教法，但聊天中斷、模型失憶或重試送出，絕對不能把 Anki 的複習歷史寫亂。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>AI 負責提問、講解和評分，Anki 保留卡片和記憶排程；單卡快刷模式每回合呼叫一次就能完成批改並取下一張。</li><li>課程紀錄保存 session、卡片與初次作答證據，換新對話照樣接得回來；事後訂正不覆蓋第一次成績。</li><li>結課先預覽要回寫的結果，確認後才送進 Anki；送出前標成結果未定，遇到斷線改用查核而非盲目重放，避免重複計分。</li><li>支援標準 MCP 客戶端（含背景 tunnel 部署），教學節奏與偏好可在開課時帶入。</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>我碰到的工程問題</h2><ul class="bullets"><li>把「講過一次」跟「真的考過記憶」拆開：只有留下實際作答證據的卡片才能算進結課評分。</li><li>長課程中間卡片可能在別台裝置被動過，回寫前會重查一次到期狀態與每日配額。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>每天背單字的實際體驗就是規格來源；我和 coding agents 一起打磨工具介面與課堂紀錄，追求教學自然，同時不弄壞底層的複習進度。</p></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>每天固定用於語言學習，單卡快刷與跨對話課程都已上線，正式複習紀錄仍完全由 Anki 掌管。</p></section><div class="tag-list"><span>Python</span><span>MCP</span><span>AnkiConnect</span><span>pytest</span><span>OpenAI tunnel</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

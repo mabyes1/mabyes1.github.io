@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="自己日常開發用的 AI 協作底座：讓雲端對話型 AI 在核准的路徑內操作本機檔案、終端機、Git 與手機裝置；真的卡住要人看一眼或點一下時，就透過 human_help_me 把最小步驟交給我。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/coding-tools-mcp">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/coding-tools-mcp">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="coding-tools MCP｜黃鵬展">
+  <meta property="og:description" content="自己日常開發用的 AI 協作底座：讓雲端對話型 AI 在核准的路徑內操作本機檔案、終端機、Git 與手機裝置；真的卡住要人看一眼或點一下時，就透過 human_help_me 把最小步驟交給我。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/coding-tools-mcp">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="coding-tools MCP｜黃鵬展">
+  <meta name="twitter:description" content="自己日常開發用的 AI 協作底座：讓雲端對話型 AI 在核准的路徑內操作本機檔案、終端機、Git 與手機裝置；真的卡住要人看一眼或點一下時，就透過 human_help_me 把最小步驟交給我。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>coding-tools MCP｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/coding-tools-mcp" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>AI Agent 與 MCP</span><span>2025–2026</span></p><h1>coding-tools MCP</h1><p class="project-lead">自己日常開發用的 AI 協作底座：讓雲端對話型 AI 在核准的路徑內操作本機檔案、終端機、Git 與手機裝置；真的卡住要人看一眼或點一下時，就透過 human_help_me 把最小步驟交給我。</p><div class="status-list"><span class="status-chip">Internal Tool</span><span class="status-chip">Daily Use</span></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>雲端 AI 寫得出程式，卻碰不到我真正的工作目錄、開發環境跟手機。我想讓它能直接在我這台 Windows 上接手做事，需要我確認時再精準把我叫回來。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>Filesystem、shell、execution session、Git 與 workspace 操作橋接；透過 ADB 在實機安裝、看 log、截圖。</li><li>Session 生命週期、健康檢查和環境自省，讓模型分得出「指令壞了、MCP 壞了、主機不在，還是 session 爆了」。</li><li>human_help_me 獨立成一個 MCP：瀏覽器擴充會在 ChatGPT、Claude、Gemini 網頁上把畫面模糊等我回應，5 秒沒反應就改跳系統對話框。</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>我碰到的工程問題</h2><ul class="bullets"><li>跑指令要能接續 session 也能取消；前景 HTTP 請求結束跟背景程序還在跑，是兩回事。</li><li>Windows service、使用者登入桌面和瀏覽器各自隔離；安裝、更新與跳出求助視窗都得對準實際操作中的使用者階段。</li><li>安裝程式會自己找出 Python、建好服務環境並留住原本的 tunnel 設定，管理頁也能直接看健康狀態、更新或回復。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>每天跟 AI 協作發現缺什麼功能就直接補進去，實作與 coding agents 一起完成，再拿真實工作目錄與實機除錯把行為調順。</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>實測後推翻與取捨</h2><ul class="bullets"><li>用久了才體會，工具越多不代表越強；模型要清楚什麼時候該用、什麼時候停、什麼時候叫人接手。</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>每天開發仰賴的本機工具層，包辦 Windows 服務安裝更新、健康管理介面和獨立的 human_help_me 求助入口。</p></section><div class="tag-list"><span>MCP</span><span>Python</span><span>Shell</span><span>Git</span><span>ADB</span><span>OAuth</span><span>Chrome Extension</span><span>Human-in-the-loop</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

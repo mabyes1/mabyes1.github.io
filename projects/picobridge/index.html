@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="讓桌上同一套 Windows 鍵鼠直接切到手機和另一台電腦上用，連剪貼簿跟檔案一起帶過去。從早期 ESP32-S3 硬體橋接一路做到 Windows 原生藍牙 HID 驅動、桌面程式和 Android App，追求的是每天切來切去依然穩。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/picobridge">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/picobridge">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PicoBridge｜黃鵬展">
+  <meta property="og:description" content="讓桌上同一套 Windows 鍵鼠直接切到手機和另一台電腦上用，連剪貼簿跟檔案一起帶過去。從早期 ESP32-S3 硬體橋接一路做到 Windows 原生藍牙 HID 驅動、桌面程式和 Android App，追求的是每天切來切去依然穩。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/picobridge">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PicoBridge｜黃鵬展">
+  <meta name="twitter:description" content="讓桌上同一套 Windows 鍵鼠直接切到手機和另一台電腦上用，連剪貼簿跟檔案一起帶過去。從早期 ESP32-S3 硬體橋接一路做到 Windows 原生藍牙 HID 驅動、桌面程式和 Android App，追求的是每天切來切去依然穩。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>PicoBridge｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/picobridge" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>系統與裝置</span><span>2026</span></p><h1>PicoBridge</h1><p class="project-lead">讓桌上同一套 Windows 鍵鼠直接切到手機和另一台電腦上用，連剪貼簿跟檔案一起帶過去。從早期 ESP32-S3 硬體橋接一路做到 Windows 原生藍牙 HID 驅動、桌面程式和 Android App，追求的是每天切來切去依然穩。</p><div class="status-list"><span class="status-chip">Daily Use</span><span class="status-chip">Private</span></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>只想用桌上原本的鍵鼠順手操作手機，回電腦時又能把剛複製的內容一起帶回來。打字會通只是起步，真正磨人的是藍牙待命干擾音訊、剪貼簿歸屬，還有更新後認不認得原裝置。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>C# 桌面程式、C 寫的 Windows 驅動（測試簽章）、Java Android App，以及 PowerShell 建置、簽章與發佈腳本。</li><li>單一離線安裝檔，支援原地更新與回滾；在 Galaxy S23 與第二台電腦上日常實測。</li><li>前身是自己焊的 ESP32-S3 硬體版：同時連 3 台藍牙主機，還兼當 USB 麥克風與喇叭。</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>我碰到的工程問題</h2><ul class="bullets"><li>閒置沒操作時卻害手機藍牙音訊斷斷續續。一路追 HCI 封包查到 HID 鍵盤燈號回報，改掉 descriptor 後保住連線待命，再用手機實播音樂確認改善。</li><li>剪貼簿會分清楚「電腦帶過去的」跟「在手機上新複製的」，回電腦只帶回新內容，才不會拿舊圖片或回聲資料把電腦工作蓋掉。</li><li>桌面閃爍原本以為是動畫 bug，翻錄影畫面逐幀抓到同步時有個隱藏清單瞬間跳出來；修掉可見性後實機消失。</li><li>Windows 與 Android 更新都會保留裝置身分、配對與設定，並留著可回退的舊版，修一個問題不用整套重配對。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>切換手感與穩定度門檻由我親自把關，每天在主力 Windows、Galaxy 手機跟第二台電腦上重度使用；跨 C 驅動、C# 桌面端和 Android 的大量實作則與 Codex 等 agents 協力推進。</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>實測後推翻與取捨</h2><ul class="bullets"><li>鍵鼠輸入走 Bluetooth Classic HID，合併版 Android App 的剪貼簿和傳檔走區網；兩條通道狀態各自顯示與重連，排錯一眼就能看清。</li><li>自寫 Windows 驅動採測試簽章，搭配單一離線安裝與回滾腳本，專注把自家主力開發機與筆電的日常切換做到最穩。</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>已在日常主力環境穩定服役，涵蓋鍵鼠切換、音訊共存與剪貼簿回傳；每次發版都保留舊版回退與雙端實測紀錄。</p></section><div class="tag-list"><span>C#</span><span>C (Windows driver)</span><span>Java</span><span>Android</span><span>Bluetooth HID</span><span>ESP32-S3</span><span>PowerShell</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

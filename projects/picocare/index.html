@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="從「長輩沒打卡，關懷人員下一步該做什麼」出發，串起手機最小摘要、關懷工作台與本地判斷模型原型。實驗對照了自訓 LoRA 與現成小模型；只要線索不足，流程就直接交回給真人跟進。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/picocare">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/picocare">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PicoCare · 本地判斷與關懷流程｜黃鵬展">
+  <meta property="og:description" content="從「長輩沒打卡，關懷人員下一步該做什麼」出發，串起手機最小摘要、關懷工作台與本地判斷模型原型。實驗對照了自訓 LoRA 與現成小模型；只要線索不足，流程就直接交回給真人跟進。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/picocare">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PicoCare · 本地判斷與關懷流程｜黃鵬展">
+  <meta name="twitter:description" content="從「長輩沒打卡，關懷人員下一步該做什麼」出發，串起手機最小摘要、關懷工作台與本地判斷模型原型。實驗對照了自訓 LoRA 與現成小模型；只要線索不足，流程就直接交回給真人跟進。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>PicoCare · 本地判斷與關懷流程｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/picocare" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>模型訓練與評估</span><span>2026</span></p><h1>PicoCare · 本地判斷與關懷流程</h1><p class="project-lead">從「長輩沒打卡，關懷人員下一步該做什麼」出發，串起手機最小摘要、關懷工作台與本地判斷模型原型。實驗對照了自訓 LoRA 與現成小模型；只要線索不足，流程就直接交回給真人跟進。</p><div class="status-list"><span class="status-chip">LoRA Fine-tuning</span><span class="status-chip">Prototype</span></div></div></div>
+      <dl class="metric-row detail"><div><dt>通用 NLI 測試準確率</dt><dd>79.7%</dd></div><div><dt>通用 NLI 保留測試題</dt><dd>1,800</dd></div><div><dt>v1 候選批次中位延遲，RTX 4060</dt><dd>60 ms</dd></div></dl>
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>沒打卡可能是忘記、出門沒帶手機、裝置故障，也可能是真的需要協助。關懷人員要的是能判斷輕重緩急的線索，不是長輩整支手機的通知與活動隱私；同時「資訊不足」必須當成正式結果，不能叫模型硬猜。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>照護分類試驗：用合成案例比較 Nemotron embedding 加分類頭與 LoRA 微調，區分漏回報、資訊不足和需優先查核的情境。</li><li>通用判斷器 NV-Jev：移植 OpenJev 的 NLI 做法在 NVIDIA reranker 上訓練 LoRA，另試 Kev 風格的直接選項 pointer head。</li><li>後續直接改測作者已訓好的 Kev-0.8B CPU 推論服務，先看任務合不合用，再決定值不值得繼續微調。</li><li>Android 端最小摘要與同意／撤回控制、HTTPS／SQLite 後端、工作台建案認領、有限提醒、家屬回報與人工結案。</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>我碰到的工程問題</h2><ul class="bullets"><li>訓練、驗證、校準與測試切得一清二楚；通用 NLI、合成照護題跟手機流程各自看結果，不混算成一個分數。</li><li>79.7% 總分背後有個關鍵弱點：v1 在中文 XNLI「資訊不足」只答對約 36%。對照護分流來說，這題比總分更重要。</li><li>照護 pilot 的 LoRA 在挑戰題沒贏過固定底座加分類頭，溫度校準也把 NLL 拉差了，最後留下更單純的預設方案。</li><li>手機端先管好資料過期與撤回同意，模型推論現階段部署在主機上，方便快速替換權重測試。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>照護情境、隱私底線和什麼情況交給真人處理都由我定，再和 Codex 一起做模型實驗、後端及裝置整合。最花心思的是看懂哪個數字才真正跟使用情境有關，以及什麼時候該停手改試現成模型。</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>實測後推翻與取捨</h2><ul class="bullets"><li>手機只送出經同意的最小摘要，完整隱私資料留在裝置內；缺線索就老實回報「資訊不足」，交給工作人員接手。</li><li>主機端測得 v1 批次延遲約 60 ms（RTX 4060），改跑 Kev-0.8B CPU 短題則在 0.6–1.4 秒；初期先把判斷邏輯與工作流程磨順，再接手手機端輕量化壓測。</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>已完成模型權重、逐題評估、CPU 推論服務，並用合成資料跑通工作台結案流程；接下來規劃將推論搬上手機本機並投入真實照護場域測試。</p></section><div class="tag-list"><span>PyTorch</span><span>LoRA</span><span>NVIDIA Nemotron</span><span>Calibration</span><span>NLI</span><span>Android</span><span>SQLite</span><span>Docker</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

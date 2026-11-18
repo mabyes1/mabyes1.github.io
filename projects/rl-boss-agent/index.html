@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="讓 AI 在原速《血源詛咒》實機挑戰科斯的孤兒：PPO 策略搭配快速反射與人工規則，保留版在實機打出 44 場 35 勝。之後繼續把觀測、規則與學習拆開實驗，研究怎麼把更多判斷交回模型自己學。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/rl-boss-agent">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/rl-boss-agent">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="強化學習 Boss 對戰 AI｜黃鵬展">
+  <meta property="og:description" content="讓 AI 在原速《血源詛咒》實機挑戰科斯的孤兒：PPO 策略搭配快速反射與人工規則，保留版在實機打出 44 場 35 勝。之後繼續把觀測、規則與學習拆開實驗，研究怎麼把更多判斷交回模型自己學。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/rl-boss-agent">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="強化學習 Boss 對戰 AI｜黃鵬展">
+  <meta name="twitter:description" content="讓 AI 在原速《血源詛咒》實機挑戰科斯的孤兒：PPO 策略搭配快速反射與人工規則，保留版在實機打出 44 場 35 勝。之後繼續把觀測、規則與學習拆開實驗，研究怎麼把更多判斷交回模型自己學。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>強化學習 Boss 對戰 AI｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/rl-boss-agent" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid"><div><p class="card-kicker"><span>模型訓練與評估</span><span>2026</span></p><h1>強化學習 Boss 對戰 AI</h1><p class="project-lead">讓 AI 在原速《血源詛咒》實機挑戰科斯的孤兒：PPO 策略搭配快速反射與人工規則，保留版在實機打出 44 場 35 勝。之後繼續把觀測、規則與學習拆開實驗，研究怎麼把更多判斷交回模型自己學。</p><div class="status-list"><span class="status-chip">Reinforcement Learning</span><span class="status-chip">Live-tested</span></div></div><figure class="detail-media"><img class="" src="/images/rl-boss-agent/live-kill.jpg" alt="AI 在實機擊倒二階段 Boss" loading="lazy"></figure></div>
+      <dl class="metric-row detail"><div><dt>實機勝率（44 場）</dt><dd>80%</dd></div><div><dt>最長連勝</dt><dd>13</dd></div><div><dt>維狀態輸入</dt><dd>5,539</dd></div><div><dt>策略／反射頻率</dt><dd>4.6 / 60 Hz</dd></div></dl>
+    </header>
+    <section class="shell gallery"><figure><img src="/images/rl-boss-agent/winrate-evolution.png" alt="實機勝率演進：純行為克隆因 covariate shift 掉到 25%，改用 DAgger 後拉回，加上策略規則到 80%。" loading="lazy"><figcaption>實機勝率演進：純行為克隆因 covariate shift 掉到 25%，改用 DAgger 後拉回，加上策略規則到 80%。</figcaption></figure><figure><img src="/images/rl-boss-agent/dojo-parry-radar.png" alt="自己寫的 60 Hz 模擬道場：畫出每招的真實判定範圍、槍反時機和處決圈，用來訓練與除錯。" loading="lazy"><figcaption>自己寫的 60 Hz 模擬道場：畫出每招的真實判定範圍、槍反時機和處決圈，用來訓練與除錯。</figcaption></figure></section>
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>策略網路每 0.217 秒才決策一次，Boss 很多閃避和槍反窗口卻只有 0.1–0.2 秒；而且模型只看得到自己打過的畫面，學不到「換個打法會怎樣」。我想找一個真實環境，把 RL、模仿學習和評估方法一起跑通。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>唯讀記憶體觀測加虛擬手把輸入：離線單機，不改血量也不改傷害，AI 跟人用一模一樣的按鍵打。</li><li>MaskablePPO 策略網路：5,539 維狀態（位置、朝向、地形距離、招式剩餘時間、判定窗倒數、資源），14 種動作。</li><li>60 Hz 反射執行緒：預測落雷射線與投擲物，只在角色雙手空著時接手 0.22 秒。</li><li>可熱重載的 action masking 規則：只擋掉明顯送命的按鍵，選擇權一樣留給網路。</li><li>60 Hz 模擬道場：從反編譯腳本還原 Boss AI，自己可以進去打、看 AI 打，也能開加速訓練。</li><li>一輸就停的檢討工具：死掉自動暫停遊戲，整理死前幾秒的出招、反射觸發和距離。</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>我碰到的工程問題</h2><ul class="bullets"><li>Covariate shift：拿「模型 + 35 條規則」的 80 場錄影直接做行為克隆，離線 loss 一直降，上實機被打頻率反而暴增到 2.3 倍，4 場只贏 1 場。改用 DAgger 後走位與喝藥進了權重，只留人類反應不過來的 0.2 秒內時機規則，勝率回到 70%。</li><li>跨 Boss 遷移學習：聖職者野獸 → 加斯科因神父 → 瑪利亞 → 孤兒，約 95% 權重直接沿用（4,980 / 5,222）。</li><li>歷史紀錄看不出「當時換個打法會怎樣」：逐場補死因進步有限，後來把玩家觀念「一階段別讓 Boss 貼身」寫成規則，再逐招稽核二階段，勝率上到 80%。</li><li>改動一律用整段連續場次的勝率，搭配信賴區間與連敗機率評估，不看單場輸贏下結論。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>目標、操作限制與驗收標準全由我定，打輸了就重看錄影、追每一場的細節紀錄。Claude Code、Codex 與 Gemini 一起參與程式碼、審查和模擬道場；最後留哪個版本、哪個死因該補觀測還是重訓，由我拍板。</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>實測後推翻與取捨</h2><ul class="bullets"><li>策略主體跑在約 4.6 Hz，遇到 0.2 秒內的閃避／槍反窗就交給 60 Hz 反射層接手，把訓練重心與穩定度留給走位和大方向決策。</li><li>曾把提示表換成更精確的版本卻沒跟著重訓，實機直接掉到 4 勝 10 敗——改觀測同樣會打亂模型原本熟悉的輸入分布。</li><li>道場裡一面放錯位置的牆曾把模型教成一路後退；模擬器能加速實驗，地形和走位還是得回實機確認。</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>混合架構版本在原速實機打出 44 場 35 勝、最長 13 連勝（附逐場紀錄）；後續也拆開做純 RL、威脅雷達與模擬道場實驗，持續把更多判斷交回模型。</p></section><div class="tag-list"><span>Python</span><span>PyTorch</span><span>Stable-Baselines3</span><span>MaskablePPO</span><span>DAgger</span><span>Gymnasium</span><span>Reverse Engineering</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

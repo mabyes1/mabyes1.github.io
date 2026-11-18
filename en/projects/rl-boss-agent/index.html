@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An agent fights the Orphan of Kos in Bloodborne at native speed, pairing a PPO policy with fast reflexes and human rules—35 wins in 44 live fights on the retained build. Later experiments separate observations, rules, and learning to push more decisions into the policy.">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/en/projects/rl-boss-agent">
+  <link rel="alternate" hreflang="zh-TW" href="https://mabyes1.github.io/projects/rl-boss-agent">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RL Boss-Fight Agent | Ken Huang">
+  <meta property="og:description" content="An agent fights the Orphan of Kos in Bloodborne at native speed, pairing a PPO policy with fast reflexes and human rules—35 wins in 44 live fights on the retained build. Later experiments separate observations, rules, and learning to push more decisions into the policy.">
+  <meta property="og:url" content="https://mabyes1.github.io/en/projects/rl-boss-agent">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RL Boss-Fight Agent | Ken Huang">
+  <meta name="twitter:description" content="An agent fights the Orphan of Kos in Bloodborne at native speed, pairing a PPO policy with fast reflexes and human rules—35 wins in 44 live fights on the retained build. Later experiments separate observations, rules, and learning to push more decisions into the policy.">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>RL Boss-Fight Agent | Ken Huang</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/en"><span class="brand-mark">KH</span><span class="brand-name">Ken Huang</span></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="" href="/en">Resume</a>
+        <a class="active" href="/en/projects">Projects</a>
+        <a href="/resume-en.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/projects/rl-boss-agent" hreflang="zh-TW">中</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="Toggle color theme">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/en/projects">← All projects</a>
+      <div class="project-hero-grid"><div><p class="card-kicker"><span>ML &amp; Evaluation</span><span>2026</span></p><h1>RL Boss-Fight Agent</h1><p class="project-lead">An agent fights the Orphan of Kos in Bloodborne at native speed, pairing a PPO policy with fast reflexes and human rules—35 wins in 44 live fights on the retained build. Later experiments separate observations, rules, and learning to push more decisions into the policy.</p><div class="status-list"><span class="status-chip">Reinforcement Learning</span><span class="status-chip">Live-tested</span></div></div><figure class="detail-media"><img class="" src="/images/rl-boss-agent/live-kill.jpg" alt="The agent landing the final blow on the phase-two boss" loading="lazy"></figure></div>
+      <dl class="metric-row detail"><div><dt>live win rate (44 fights)</dt><dd>80%</dd></div><div><dt>longest win streak</dt><dd>13</dd></div><div><dt>state dimensions</dt><dd>5,539</dd></div><div><dt>policy / reflex rate</dt><dd>4.6 / 60 Hz</dd></div></dl>
+    </header>
+    <section class="shell gallery"><figure><img src="/images/rl-boss-agent/winrate-evolution.png" alt="Live win-rate history: pure behavior cloning dropped to 25% from covariate shift, DAgger recovered it, and a phase-one rule took it to 80%." loading="lazy"><figcaption>Live win-rate history: pure behavior cloning dropped to 25% from covariate shift, DAgger recovered it, and a phase-one rule took it to 80%.</figcaption></figure><figure><img src="/images/rl-boss-agent/dojo-parry-radar.png" alt="The 60 Hz training dojo I built, drawing each attack’s real hitbox, parry timing, and visceral range for training and debugging." loading="lazy"><figcaption>The 60 Hz training dojo I built, drawing each attack’s real hitbox, parry timing, and visceral range for training and debugging.</figcaption></figure></section>
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>Why I built it</h2><p>The policy acts every 0.217 s while many dodge and parry windows last only 0.1–0.2 s—and a model trained on its own fights never sees what an untried strategy would do. I wanted one live testbed to exercise RL, imitation learning, and evaluation together.</p></section><section id="built"><p class="eyebrow">What I built</p><h2>What I built</h2><ul class="bullets"><li>Read-only memory observation plus a virtual gamepad: offline, zero health or damage edits, using the exact same inputs a player uses.</li><li>A MaskablePPO policy over a 5,539-dimension state (positions, facing, terrain clearance, move timers, hit-window countdowns, resources) and 14 actions.</li><li>A 60 Hz reflex thread predicting lightning rays and projectiles, taking over for 0.22 s only when the character’s hands are free.</li><li>Hot-reloadable action masking that blocks only fatal inputs and leaves the rest to the network.</li><li>A 60 Hz simulation dojo rebuilt from decompiled boss scripts—for playing, watching the agent, and fast training.</li><li>Stop-on-loss review tooling that pauses on death and summarizes moves, reflexes, and distances from the final seconds.</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>Problems I worked through</h2><ul class="bullets"><li>Covariate shift: pure behavior cloning on 80 recorded fights of “policy + 35 rules” lowered offline loss, yet live hit frequency spiked 2.3× and it won 1 of 4. Switching to DAgger moved positioning and healing into the weights, leaving only sub-0.2 s timing rules and bringing wins back to 70%.</li><li>Cross-boss transfer: Cleric Beast → Father Gascoigne → Lady Maria → Orphan of Kos, reusing 4,980 of 5,222 weights.</li><li>Logs cannot show counterfactuals: patching deaths one by one barely moved the needle. Encoding the player habit “never let phase one close the distance,” plus a move-by-move audit of phase two, lifted win rate to 80%.</li><li>Changes are judged across consecutive fight blocks with confidence intervals and streak odds, never on a single fight.</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>How I split the work with AI</h2><p>I set the goals, input rules, and acceptance bar, watching live replays and auditing fight logs whenever it died. Claude Code, Codex, and Gemini worked on code, review, and the training dojo; I made the call on what to keep and whether the next fix meant better observations or retraining.</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>What testing made me change</h2><ul class="bullets"><li>The main policy runs at ~4.6 Hz while a 60 Hz reflex layer catches sub-0.2 s dodge and parry windows, keeping training focused on high-level spacing and decisions.</li><li>Swapping in a more accurate hint table without retraining dropped live results to 4W / 10L: even fixing an observation shifts the policy’s input distribution.</li><li>A misplaced wall in the dojo once taught the agent to backpedal endlessly; simulation speeds up iteration, but live runs remain the ground truth.</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>Outcome</h2><p>The retained hybrid build achieved 35 wins in 44 live fights at native speed with a 13-win streak and full fight logs; follow-up pure-RL, threat-radar, and dojo tracks push more decisions directly into the policy.</p></section><div class="tag-list"><span>Python</span><span>PyTorch</span><span>Stable-Baselines3</span><span>MaskablePPO</span><span>DAgger</span><span>Gymnasium</span><span>Reverse Engineering</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

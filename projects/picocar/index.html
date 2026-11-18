@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="幫自己的 Android 車機做桌面和 AI 助理，把導航、媒體、常用捷徑和 App 視窗整合在同一頁，車上助理跟外部 MCP 共用同一套控制能力。已裝上 Android 13 實車，也確認實體 HOME 鍵會回到 PicoCar。">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/projects/picocar">
+  <link rel="alternate" hreflang="en" href="https://mabyes1.github.io/en/projects/picocar">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PicoCar｜黃鵬展">
+  <meta property="og:description" content="幫自己的 Android 車機做桌面和 AI 助理，把導航、媒體、常用捷徑和 App 視窗整合在同一頁，車上助理跟外部 MCP 共用同一套控制能力。已裝上 Android 13 實車，也確認實體 HOME 鍵會回到 PicoCar。">
+  <meta property="og:url" content="https://mabyes1.github.io/projects/picocar">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PicoCar｜黃鵬展">
+  <meta name="twitter:description" content="幫自己的 Android 車機做桌面和 AI 助理，把導航、媒體、常用捷徑和 App 視窗整合在同一頁，車上助理跟外部 MCP 共用同一套控制能力。已裝上 Android 13 實車，也確認實體 HOME 鍵會回到 PicoCar。">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>PicoCar｜黃鵬展</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/"><span class="brand-mark">KH</span><span class="brand-name">黃鵬展</span></a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="" href="/">履歷</a>
+        <a class="active" href="/projects">作品</a>
+        <a href="/resume-zh.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/en/projects/picocar" hreflang="en">EN</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="切換深色模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/projects">← 全部作品</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>AI Agent 與 MCP</span><span>2026</span></p><h1>PicoCar</h1><p class="project-lead">幫自己的 Android 車機做桌面和 AI 助理，把導航、媒體、常用捷徑和 App 視窗整合在同一頁，車上助理跟外部 MCP 共用同一套控制能力。已裝上 Android 13 實車，也確認實體 HOME 鍵會回到 PicoCar。</p><div class="status-list"><span class="status-chip">Real Head-unit Install</span><span class="status-chip">In Development</span></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>為什麼做</h2><p>車機會重新開機、ADB 總比開機慢半拍，原廠 HOME 鍵也不一定鳥 Android 的預設桌面設定。我需要一個一發動就能順手點的桌面，而且車上 AI 得看懂當下畫面和車機能力。</p></section><section id="built"><p class="eyebrow">What I built</p><h2>我做了什麼</h2><ul class="bullets"><li>本機 agent 和 MCP server 共用 CarAgentContract／CarCapabilities／CarOperations。</li><li>透過無障礙服務讀取與操作畫面；App 視窗畫在受信任的虛擬顯示器上，並尊重 FLAG_SECURE。</li><li>可接任何 OpenAI-compatible 模型 API，金鑰以 Android Keystore AES-GCM 加密。</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>我碰到的工程問題</h2><ul class="bullets"><li>實車上呼叫系統設預設桌面回報成功，實體 HOME 鍵卻還是跳回原廠桌面。一路追到廠商自己的 launcher 設定改掉，再按實體鍵確認。</li><li>車機本身的 ADB 身分跟手機連車機的 ADB 通道分開處理；Android 無線 ADB 用的是動態連接埠，不能寫死 5555。</li><li>UI 操作分開記「已送出」和「畫面已看到結果」，搭配呼叫次數上限與任務日誌，斷線時查得出卡在哪一步。</li><li>版面調整保留原本的捷徑；點媒體封面會打開當前播放器，播放／上一首／下一首各自保留獨立點擊區，不讓整列點擊搶走按鈕。</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>我和 AI 怎麼分工</h2><p>用開車前停車時的實際操作手感定規格，跟 Codex 一起做 Android 桌面、Agent 操作和裝置整合，最後在車上用實體 HOME 鍵、捷徑和畫面回饋一條條測過。</p></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>成果</h2><p>已完成 Android 13 實車安裝，實體 HOME 鍵與新版桌面配置均現場驗證通過；後續補上的動態 ADB 自動恢復與媒體按鈕點擊修正也已完成建置與測試。</p></section><div class="tag-list"><span>Android</span><span>Java</span><span>MCP</span><span>Accessibility Service</span><span>Virtual Display</span><span>Android Keystore</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>

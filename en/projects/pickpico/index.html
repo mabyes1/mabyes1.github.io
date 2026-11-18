@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gives an AI agent eyes, app control, an on-device runtime, and a direct way to ask someone nearby for help through an Android phone. Started as a hackathon winner and grew into a daily tool with remote authorization, a mobile runtime, and connection recovery.">
+  
+  <link rel="canonical" href="https://mabyes1.github.io/en/projects/pickpico">
+  <link rel="alternate" hreflang="zh-TW" href="https://mabyes1.github.io/projects/pickpico">
+  <link rel="alternate" hreflang="x-default" href="https://mabyes1.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PickPico | Ken Huang">
+  <meta property="og:description" content="Gives an AI agent eyes, app control, an on-device runtime, and a direct way to ask someone nearby for help through an Android phone. Started as a hackathon winner and grew into a daily tool with remote authorization, a mobile runtime, and connection recovery.">
+  <meta property="og:url" content="https://mabyes1.github.io/en/projects/pickpico">
+  <meta property="og:image" content="https://mabyes1.github.io/og.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PickPico | Ken Huang">
+  <meta name="twitter:description" content="Gives an AI agent eyes, app control, an on-device runtime, and a direct way to ask someone nearby for help through an Android phone. Started as a hackathon winner and grew into a daily tool with remote authorization, a mobile runtime, and connection recovery.">
+  <meta name="twitter:image" content="https://mabyes1.github.io/og.png">
+  <title>PickPico | Ken Huang</title>
+  <script>try{const s=localStorage.getItem('ken-theme');const d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=d?'dark':'light'}catch{}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/en"><span class="brand-mark">KH</span><span class="brand-name">Ken Huang</span></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="" href="/en">Resume</a>
+        <a class="active" href="/en/projects">Projects</a>
+        <a href="/resume-en.pdf">PDF</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-control" href="/projects/pickpico" hreflang="zh-TW">中</a>
+        <button class="icon-control" type="button" data-theme-toggle aria-label="Toggle color theme">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 3a9 9 0 1 0 9 9c0-.47-.04-.93-.1-1.38A7 7 0 0 1 13.38 3.1C12.93 3.04 12.47 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header><main id="main" class="project-detail-main">
+    <header class="project-hero shell"><a class="back-link" href="/en/projects">← All projects</a>
+      <div class="project-hero-grid no-media"><div><p class="card-kicker"><span>Agents &amp; MCP</span><span>2026</span></p><h1>PickPico</h1><p class="project-lead">Gives an AI agent eyes, app control, an on-device runtime, and a direct way to ask someone nearby for help through an Android phone. Started as a hackathon winner and grew into a daily tool with remote authorization, a mobile runtime, and connection recovery.</p><div class="status-list"><span class="status-chip">SITCON 2026 · 3rd Place</span><span class="status-chip">Team Project</span></div><div class="hero-actions"><a class="button primary" href="https://github.com/mabyes1/PickPico" target="_blank" rel="noreferrer">Source / Docs</a><a class="button secondary" href="https://mabyes1.github.io/PickPico/" target="_blank" rel="noreferrer">Showcase</a></div></div></div>
+      
+    </header>
+    
+    <div class="shell case-study-grid"><aside class="case-nav"><a href="#problem">Why</a><a href="#built">What I built</a><a href="#engineering">Engineering</a><a href="#role">Role &amp; AI</a><a href="#tradeoffs">Trade-offs</a><a href="#outcome">Outcome</a></aside><article class="case-study"><section id="problem"><p class="eyebrow">Why</p><h2>Why I built it</h2><p>Agents often stall on the last mile: checking a device display, tapping an app with no API, or asking someone for another photo. Rather than adding extra hardware, I used the phone people already carry to link observation, action, human help, and task continuation.</p></section><section id="built"><p class="eyebrow">What I built</p><h2>What I built</h2><ul class="bullets"><li>Android sensing and control: camera, audio, location, notifications, screen, and UI actions, with Core / Hyper Mode separating permission levels.</li><li>HUMAN HELP accepts text, choices, photos, or a fresh camera capture so the agent can pick up where it left off. The hackathon build also included an ESP32-S3 approval controller.</li><li>A built-in Node.js Mobile runtime lets agents write files, run code, and manage background processes inside the app workspace.</li><li>Local MCP and a Cloudflare relay, phone-confirmed OAuth for remote clients, and paired device access through PicoADB.</li></ul></section><section id="engineering"><p class="eyebrow">Engineering</p><h2>Problems I worked through</h2><ul class="bullets"><li>On connection loss, the system separates actions that never ran from ones that might have completed; reads can retry, while timed-out writes are never blindly replayed.</li><li>Tool responses include recovery hints alongside parameters, helping agents handle missing permissions, locked screens, or offline ADB.</li><li>Updates and auth repairs preserve device identity, pairing, and settings—exercised through repeated start, disconnect, and recovery runs on my own phone.</li></ul></section><section id="role"><p class="eyebrow">Role &amp; AI</p><h2>How I split the work with AI</h2><p>I led the architecture, Android app, and MCP/relay integration while using AI coding agents for implementation and debugging. Permission gates and recovery paths were settled by running them repeatedly on my own phone.</p></section><section id="tradeoffs"><p class="eyebrow">Trade-offs</p><h2>What testing made me change</h2><ul class="bullets"><li>Built on standard Android permissions and explicit user consent so OS-level security boundaries stay intact.</li></ul></section><section id="outcome"><p class="eyebrow">Outcome</p><h2>Outcome</h2><p>Won third place at FUTUREMODE × SITCON Hackathon 2026, with public source and showcase. Kept evolving as a daily phone-tooling layer—including deploying PicoCar onto a real car head unit through the phone’s ADB route.</p><div class="evidence-links"><a href="https://github.com/mabyes1/PickPico" target="_blank" rel="noreferrer">Source / Docs ↗</a><a href="https://mabyes1.github.io/PickPico/" target="_blank" rel="noreferrer">Showcase ↗</a></div></section><div class="tag-list"><span>MCP</span><span>Android</span><span>Cloudflare Durable Objects</span><span>Cloudflare KV</span><span>ESP32-S3</span><span>Bluetooth</span><span>Human-in-the-loop</span></div></article></div>
+  </main><footer class="site-footer"><div class="shell"><span>© 2026 Ken Huang · 黃鵬展</span><span>@mabyes1</span></div></footer>
+  <script>
+    document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ken-theme',n)}catch{}}));
+    document.querySelectorAll('[data-filter-group]').forEach(g=>{const grid=document.querySelector(g.dataset.filterGroup);g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));const f=b.dataset.filter;grid.querySelectorAll('[data-cat]').forEach(c=>{c.hidden=f!=='all'&&c.dataset.cat!==f})}))});
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();v.controls=true});
+  </script>
+</body>
+</html>
